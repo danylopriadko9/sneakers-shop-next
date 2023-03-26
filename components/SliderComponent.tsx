@@ -4,7 +4,7 @@ import { data } from '../public/data/slider';
 
 const SliderComponent = () => {
   return (
-    <Slider className='relative' {...settings}>
+    <Slider className='relative pt-[120px]' {...settings}>
       {data.map((el) => (
         <div
           className='h-[250px] phone-[300px] tablet:h-[500px] overflow-hidden flex items-center relative'

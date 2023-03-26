@@ -43,16 +43,16 @@ const Header: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <motion.header className='relative'>
+      <motion.header className='fixed z-[100] w-full block'>
         <div className='h-[35px] bg-black w-full flex justify-center items-center z-[100]'>
           <span className='text-white font-extralight'>
             Безкоштовна доставка від 4000 гривень!
           </span>
         </div>
-        <div className='w-full py-[20px] border-b border-gray-200 flex justify-center z-[1000]'>
-          <div className='max-w-[1400px] w-[1400px] flex items-center phone:justify-around h-[50px] justify-between phone:px-0 px-5'>
+        <div className='w-full py-[20px] border-b border-gray-200 flex justify-center z-[1000] bg-white'>
+          <div className='max-w-[1400px] w-[1400px] flex items-center phone:justify-around h-[50px] justify-between phone:px-0 px-5 '>
             <div className='flex gap-5 items-center'>
-              <Image src={logo} alt='Picture of the author' height={50} />
+              <Image src={logo} alt='Picture of the author' height={80} />
             </div>
 
             <div className='phone:flex gap-7 items-center select-none hidden'>
@@ -98,7 +98,10 @@ const Header: React.FC = (): JSX.Element => {
                 className='p-2 rounded-md hover:bg-gray-100 hover:cursor-pointer block phone:hidden'
                 onClick={() => setMobileStatus((prev) => !prev)}
               >
-                {!mobileStatus && <MenuIcon fontSize='large' />}
+                <MenuIcon
+                  fontSize='large'
+                  style={{ opacity: !mobileStatus ? 1 : 0 }}
+                />
               </div>
             </div>
           </div>

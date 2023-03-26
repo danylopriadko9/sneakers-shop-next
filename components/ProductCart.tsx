@@ -7,7 +7,7 @@ interface IProductCart {
 
 const ProductCart: React.FC<IProductCart> = ({ el }): JSX.Element => {
   return (
-    <div className='flex tablet:w-[23%] w-[100%] h-auto tablet:h-[550px] justify-between flex-col cursor-pointer gap-10 tablet:gap-0'>
+    <div className='flex tablet:w-[23%] phone:w-[40%] w-[100%] h-auto tablet:h-[550px] justify-between flex-col cursor-pointer gap-10 tablet:gap-0'>
       <div className='w-full tablet:h-[400px] overflow-hidden flex items-center justify-center'>
         <img
           src={

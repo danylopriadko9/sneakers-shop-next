@@ -1,3 +1,4 @@
+import Banners from '@/components/Banners';
 import Header from '@/components/Header';
 import PopularCategories from '@/components/PopularCategories';
 import SliderComponent from '@/components/SliderComponent';
@@ -11,6 +12,7 @@ const Home: React.FC = (): JSX.Element => {
       <SliderComponent />
       <PopularCategories />
       <TopSellers />
+      <Banners />
     </>
   );
 };
