@@ -7,11 +7,11 @@ const SliderComponent = () => {
     <Slider className='relative pt-[120px]' {...settings}>
       {data.map((el) => (
         <div
-          className='h-[250px] phone-[300px] tablet:h-[500px] overflow-hidden flex items-center relative'
+          className='h-[250px] phone-[300px] tablet:h-[500px] overflow-hidden flex items-center relative justify-center'
           key={el.id}
         >
           <div className='absolute top-0 bottom-0 right-0 left-0 bg-black/[.6] ' />
-          <div className='absolute flex flex-col gap-4 tablet:gap-16 tablet:pt-[100px] tablet:px-[100px] px-[50px] py-[20px] justify-between h-full'>
+          <div className='absolute 2xl:left-[20%] flex flex-col gap-4 tablet:gap-16 tablet:pt-[100px] tablet:px-[100px] px-[50px] py-[20px] justify-between h-full'>
             <h1 className='tablet:text-4xl text-2xl text-white font-extrabold'>
               {el.title}
             </h1>

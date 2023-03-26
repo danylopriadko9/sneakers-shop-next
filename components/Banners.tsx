@@ -36,7 +36,7 @@ const Banners: React.FC = (): JSX.Element => {
     <>
       <div className='w-full overflow-hidden relative tablet:h-[600px] h-[550px]'>
         {actualBanner?.id && (
-          <div className='max-w-full max-h-full w-full h-full absolute tablet:p-[100px] p-[50px] flex flex-col gap-5 z-10'>
+          <div className='max-w-full max-h-full w-full h-full absolute tablet:p-[100px] p-[50px] flex flex-col gap-5 z-10 2xl:left-[20%]'>
             <h1 className='text-white tablet:text-6xl text-2xl uppercase font-bold'>
               {actualBanner.attributes.title}
             </h1>
@@ -53,7 +53,7 @@ const Banners: React.FC = (): JSX.Element => {
             banners.data.map((el) => (
               <div
                 key={el.id}
-                className={`w-1/3 flex flex-col tablet:flex-row gap-2 tablet:gap-5 text-white items-center justify-center ${
+                className={` hover:bg-black/[0.4] w-1/3 flex flex-col tablet:flex-row gap-2 tablet:gap-5 text-white items-center justify-center ${
                   actualBanner === el ? '' : 'bg-black/[0.7]'
                 }`}
                 onClick={() => handleChangeBanner(el)}

@@ -1,4 +1,6 @@
-interface Category {
+import { IImage } from './images';
+
+export interface Category {
   id: number;
   attributes: {
     title: string;
@@ -7,6 +9,9 @@ interface Category {
     publishedAt: string;
     sub_categories: {
       data: SubCategory[];
+    };
+    img?: {
+      data: IImage;
     };
   };
 }
