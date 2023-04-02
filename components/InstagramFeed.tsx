@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 
 const fetchInstagramPosts = async (): Promise<InstagramData> => {
   const response = await makeRequest.get(
-    'https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQVJVNFgtSUNsZA0JnWS1DYzJ2VDZAsNk5qdDl1Ymd6ZAzN6b1pFN1kxQnp5OVVvN05tRGZAENVdDYVdtUHE5VVpNTnlKLVRfOTZAUVms3NG1wZAWNwOUpjZA0VJQW9VbnZAJcTJJX1BiZAkVldDRzSXFWVnR3QwZDZD'
+    `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_API_KEY}`
   );
   console.log(response.data);
   return response.data;
@@ -34,7 +34,7 @@ const InstagramFeed = () => {
 
         <div className='flex max-w-full gap-5 flex-wrap w-full justify-center'>
           {posts?.data.map((el, i) =>
-            i <= 2 ? (
+            i <= 3 ? (
               <div
                 className='w-[200px] tablet:w-[300px] flex flex-col gap-2'
                 key={el.media_url}
@@ -48,7 +48,7 @@ const InstagramFeed = () => {
                   {String(new Date(el.timestamp).toDateString())}
                 </p>
                 <p>{el.caption}</p>
-                <button className=' border-b-2 border-black px-6 py-2 text-black uppercase hover:border-0 cursor-pointer max-w-[300px] mx-auto'>
+                <button className=' border-b-2 outline-2 border-black px-6 py-2 text-black uppercase hover:border-white cursor-pointer max-w-[300px] mx-auto'>
                   Переглянути
                 </button>
               </div>
